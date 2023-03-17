@@ -12,7 +12,8 @@ namespace GymAndYou___MinimalAPI___Project.Gyms
             app.MapGet("/api/gym",GymRequest.GetAll)
                 .WithDescription("Return every gyms from resources")
                 .WithTags("Gyms")
-                .Produces<List<Gym>>();
+                .Produces<List<Gym>>()
+                .RequireAuthorization();
             app.MapGet("/api/gym/{id}",GymRequest.GetById)
                 .WithTags("Gyms")
                 .WithSummary("Return particular gym from resources")
